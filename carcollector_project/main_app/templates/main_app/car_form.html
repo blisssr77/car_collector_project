@@ -1,0 +1,26 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+
+{% if object %}
+<h1 class="">Edit <span class="text-secondary">{{object.model}}</span></h1>
+{% else %}
+<h1 class="text-muted">Add Car</h1>
+{% endif %}
+
+<form action="" method="POST" class="card bg-light rounded shadow p-4">
+  {% csrf_token %}
+  <div class="form-group row">
+    {{ form.as_p }}
+  </div>
+  <div class="text-center">
+  <button type="submit" class="btn btn-primary" style="width: 250px;">Submit</button>
+  </div>
+  <br>
+  <div class="text-center">
+  <button type="submit" class="btn btn-secondary" style="width: 250px;">Cancel</button>
+  </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+    <h1>Car List</h1>
+
+    {% for car in cars %}
+    <div class="card mb-4">
+        <header class="card-header">
+            <a href="/cars/{{ car.id }}" class="card-header-title">
+                {{ car.model }}
+            </a>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <p><strong>Made in:</strong> {{ car.madein }}</p>
+                <p><strong>Year:</strong> {{ car.year }}</p> 
+                <p><strong>MSRP$:</strong> {{ car.msrp }}</p>
+                <p><strong>Horsepower:</strong> {{ car.horsepower }}</p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}

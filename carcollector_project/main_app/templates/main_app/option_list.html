@@ -1,0 +1,17 @@
+{% extends 'cars/base.html' %}
+{% block content %}
+
+<h1>Option List</h1>
+
+{% for option in option_list %}
+  <a href="{% url 'options_detail' option.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ option.name }}</span>
+            <p>Color: {{ option.color }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}

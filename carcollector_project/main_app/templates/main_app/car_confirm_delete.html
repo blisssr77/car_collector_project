@@ -1,0 +1,25 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <div class="card bg-light shadow">
+    <div class="card-header bg-secondary text-white">
+      <h1>Delete Car</h1>
+    </div>
+    <div class="card-body">
+      <h4 style="color:grey">Are you sure you want to delete <span style="color:black">{{ object.model }}</span></h4>
+
+      <form action="" method="POST" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group row">
+          {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-danger mr-2">Delete!</button>
+        <a href="{% url 'detail' car.id %}" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
